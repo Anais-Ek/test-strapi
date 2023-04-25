@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_users",
+  "info": {
+    "singularName": "chat-user",
+    "pluralName": "chat-users",
+    "displayName": "Chat-user",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "friends": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chat-user.chat-user"
+    },
+    "chat_conversations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chat-conversation.chat-conversation",
+      "mappedBy": "chat_users"
+    }
+  }
+}

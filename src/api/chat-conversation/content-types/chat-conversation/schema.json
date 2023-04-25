@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_conversations",
+  "info": {
+    "singularName": "chat-conversation",
+    "pluralName": "chat-conversations",
+    "displayName": "Chat-conversation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "chat_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::chat-user.chat-user",
+      "inversedBy": "chat_conversations"
+    }
+  }
+}
